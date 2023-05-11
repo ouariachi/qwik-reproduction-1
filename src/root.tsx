@@ -1,10 +1,12 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useStyles$ } from '@builder.io/qwik';
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
 
-import './global.css';
+import global from './global.scss?inline';
 
 export default component$(() => {
+  useStyles$(global);
+
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
    * immediately followed by the document's <head> and <body>.
